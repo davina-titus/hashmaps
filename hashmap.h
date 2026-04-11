@@ -37,7 +37,6 @@ class HashMap {
    * Creates an empty `HashMap` with 10 buckets.
    */
   HashMap() : sz(0), capacity(10), curr(nullptr), curr_idx(0) {
-    // TODO_STUDENT
     data = new ChainNode*[capacity];
     for (size_t i = 0; i < capacity; i++) {
       data[i] = nullptr;
@@ -49,7 +48,7 @@ class HashMap {
    */
   HashMap(size_t capacity)
       : sz(0), capacity(capacity), curr(nullptr), curr_idx(0) {
-    // TODO_STUDENT
+ 
     data = new ChainNode*[capacity];
     for (size_t i = 0; i < capacity; i++) {
       data[i] = nullptr;
@@ -60,7 +59,6 @@ class HashMap {
    * Checks if the `HashMap` is empty. Runs in O(1).
    */
   bool empty() const {
-    // TODO_STUDENT
     return sz == 0;
   }
 
