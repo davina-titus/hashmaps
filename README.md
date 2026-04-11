@@ -1,6 +1,6 @@
 # HashMap
 
-A templated chaining hash table implemented in C++ from scratch, built for CS 251 at the University of Illinois Chicago.
+A templated chaining hash table implemented in C++ from scratch.
 
 ## Overview
 
@@ -53,17 +53,10 @@ hm == other;                    // true if same key-value pairs, regardless of s
 ## Building & Testing
 
 ```bash
-make test_hashmap_core       # run Milestone 1 tests
-make test_hashmap_aug        # run Milestone 2 tests
+make test_hashmap_core       # run core tests
+make test_hashmap_aug        # run augmented tests
 make test_hashmap_all        # run all tests
-make run_main                # run hashmap_main.cpp for ad-hoc testing
+make run_main                # run main for ad-hoc testing
 ```
 
 Tests use GoogleTest and run with `-fsanitize=address,undefined` automatically.
-
-## Results
-
-- **85/85** — Core milestone (constructor, insert, at, contains, clear, erase, copy, operator=)
-- **15/15** — Augmented milestone (operator==, begin, next)
-- All 20 buggy solutions caught by student test suite
-- Clean AddressSanitizer report
