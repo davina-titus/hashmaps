@@ -68,7 +68,6 @@ class HashMap {
    * Returns the number of mappings in the `HashMap`. Runs in O(1).
    */
   size_t size() const {
-    // TODO_STUDENT
     return sz;
   }
 
@@ -85,7 +84,6 @@ class HashMap {
    * Runs in O(L), where L is the length of the longest chain.
    */
   void insert(KeyT key, ValT value) {
-    // TODO_STUDENT
     size_t idx = hash<KeyT>{}(key) % capacity;
     for (ChainNode* n = data[idx]; n != nullptr; n = n->next) {
       if (n->key == key) {
@@ -129,7 +127,6 @@ class HashMap {
    * Runs in O(L), where L is the length of the longest chain.
    */
   ValT& at(const KeyT& key) const {
-    // TODO_STUDENT
     size_t idx = hash<KeyT>{}(key) % capacity;
     for (ChainNode* n = data[idx]; n != nullptr; n = n->next) {
       if (n->key == key) {
@@ -145,7 +142,6 @@ class HashMap {
    * Runs in O(L), where L is the length of the longest chain.
    */
   bool contains(const KeyT& key) const {
-    // TODO_STUDENT
     size_t idx = hash<KeyT>{}(key) % capacity;
     for (ChainNode* n = data[idx]; n != nullptr; n = n->next) {
       if (n->key == key) {
@@ -163,7 +159,7 @@ class HashMap {
    * buckets.
    */
   void clear() {
-    // TODO_STUDENT
+  
     for (size_t i = 0; i < capacity; i++) {
       ChainNode* node = data[i];
       while (node != nullptr) {
@@ -183,7 +179,7 @@ class HashMap {
    * buckets.
    */
   ~HashMap() {
-    // TODO_STUDENT
+   
     for (size_t i = 0; i < capacity; i++) {
       ChainNode* node = data[i];
       while (node != nullptr) {
@@ -205,7 +201,7 @@ class HashMap {
    * Runs in O(L), where L is the length of the longest chain.
    */
   ValT erase(const KeyT& key) {
-    // TODO_STUDENT
+    
     size_t idx = hash<KeyT>{}(key) % capacity;
     ChainNode* node = data[idx];
     ChainNode* prev = nullptr;
@@ -239,7 +235,7 @@ class HashMap {
    */
   HashMap(const HashMap& other)
       : sz(other.sz), capacity(other.capacity), curr(nullptr), curr_idx(0) {
-    // TODO_STUDENT
+    
     data = new ChainNode*[capacity];
 
     for (size_t i = 0; i < capacity; i++) {
@@ -270,7 +266,7 @@ class HashMap {
    * in `other`.
    */
   HashMap& operator=(const HashMap& other) {
-    // TODO_STUDENT
+    
     if (this == &other) {
       return *this;
     }
@@ -326,7 +322,7 @@ class HashMap {
    *
    */
   bool operator==(const HashMap& other) const {
-    // TODO_STUDENT
+    
     if (sz != other.sz) {
       return false;
     }
@@ -353,7 +349,7 @@ class HashMap {
    * Runs in worst-case O(B), where B is the number of buckets.
    */
   void begin() {
-    // TODO_STUDENT
+    
     curr = nullptr;
     curr_idx = 0;
 
@@ -390,7 +386,7 @@ class HashMap {
    * Runs in worst-case O(B) where B is the number of buckets.
    */
   bool next(KeyT& key, ValT& value) {
-    // TODO_STUDENT
+   
 
     if (curr == nullptr) {
       return false;
