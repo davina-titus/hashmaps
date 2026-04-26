@@ -15,32 +15,7 @@ A templated chaining hash table implemented in C++ from scratch.
 - Deep copy via copy constructor and assignment operator with self-assignment protection
 - No memory leaks — verified with AddressSanitizer + LeakSanitizer
 
-## API
 
-```cpp
-HashMap<string, int> hm;        // default 10 buckets
-HashMap<string, int> hm(32);    // custom capacity
-
-hm.insert("alice", 1);
-hm.at("alice");                 // returns reference, throws out_of_range if missing
-hm.contains("alice");           // true / false
-hm.erase("alice");              // returns value, throws out_of_range if missing
-hm.size();                      // number of mappings
-hm.empty();                     // true if size == 0
-hm.clear();                     // removes all mappings, keeps bucket array
-
-// Iteration (no defined order)
-hm.begin();
-string key;
-int val;
-while (hm.next(key, val)) {
-    cout << key << ": " << val << endl;
-}
-
-// Equality
-HashMap<string, int> other;
-hm == other;                    // true if same key-value pairs, regardless of structure
-```
 
 ## Implementation Details
 
